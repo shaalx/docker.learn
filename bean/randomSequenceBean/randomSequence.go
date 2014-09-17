@@ -203,6 +203,7 @@ func one_finding(graph *Graph) {
 }
 
 func example() {
+
 	initAll()
 	start()
 }
