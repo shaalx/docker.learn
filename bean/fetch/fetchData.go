@@ -1,7 +1,7 @@
 package fetch
 
 import (
-	"json/third-pkg/httplib"
+	"yodao/third-pkg/httplib"
 )
 
 // fetch data by url

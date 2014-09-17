@@ -1,7 +1,7 @@
 package main
 
 import (
-	"json/action/containAction"
+	"yodao/action/containAction"
 )
 
 func main() {

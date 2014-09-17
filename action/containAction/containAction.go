@@ -2,9 +2,9 @@ package containAction
 
 import (
 	"fmt"
-	"json/bean/fetch"
-	"json/bean/search"
-	. "json/config"
+	"yodao/bean/fetch"
+	"yodao/bean/search"
+	. "yodao/config"
 )
 
 func ContainAction(sequence string) {

@@ -1,8 +1,8 @@
 package search
 
 import (
-	"json/common"
-	simplejson "json/third-pkg/go-simplejson"
+	"yodao/common"
+	simplejson "yodao/third-pkg/go-simplejson"
 )
 
 // search key
