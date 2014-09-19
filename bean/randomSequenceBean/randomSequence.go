@@ -1,7 +1,6 @@
 package randomSequenceBean
 
 import (
-	"./sequence"
 	"bufio"
 	"encoding/json"
 	"fmt"
@@ -10,6 +9,10 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"yodao/bean/fetch"
+	"yodao/bean/randomSequenceBean/sequence"
+	"yodao/bean/search"
+	. "yodao/config"
 )
 
 // 无向图，4*4=16个节点。 即在这个序列图上生成字母组合
@@ -134,12 +137,19 @@ func once() {
 // deep:访问的深度，调节deep的值可以改变整体性能
 // s：当前访问得到的字母组合
 func (t Graph) dfs(e Edge, deep int, s string) {
-	if vis[e.I][e.J] || deep > 5 {
+	if vis[e.I][e.J] || deep > 9 {
 		return
 	}
 	s = s + t[e.I][e.J].V
 	// if (*ciku)[s] {
 	result <- s
+	path := "http://dict.youdao.com/mvoice?word=" + s
+	b := fetch.FetchData(&path, IP)
+	contain := search.SearchContain(b, "contain")
+	// fmt.Println(s)
+	if contain {
+		fmt.Print(s, "\t")
+	}
 	// }
 	vis[e.I][e.J] = true
 	for _, item := range t[e.I][e.J].E {
@@ -156,8 +166,8 @@ func readChan(q chan bool) {
 		select {
 		case <-q:
 			quit = true
-		case r := <-result:
-			fmt.Printf("%16s", r)
+		case <-result:
+			// fmt.Printf("%16s", r)
 		}
 		if quit {
 			break
@@ -167,7 +177,7 @@ func readChan(q chan bool) {
 
 // 开始
 func start() {
-	graph := initGraphFromJson("./graph/graph.json")
+	graph := initGraphFromJson("graph.json")
 	for {
 		sequence := sequence.Sequence()
 		graph.inti_graph_with_sequence(sequence)
@@ -202,7 +212,7 @@ func one_finding(graph *Graph) {
 	fmt.Println(t2.Sub(t1))
 }
 
-func example() {
+func Example() {
 
 	initAll()
 	start()

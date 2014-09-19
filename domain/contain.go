@@ -1,9 +1,11 @@
 package main
 
 import (
-	"yodao/action/containAction"
+	// "yodao/action/containAction"
+	"yodao/bean/randomSequenceBean"
 )
 
 func main() {
-	containAction.ContainAction("mask")
+	// containAction.ContainAction("mask")
+	randomSequenceBean.Example()
 }

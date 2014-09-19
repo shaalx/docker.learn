@@ -8,7 +8,7 @@ package sequence
 // package main
 
 import (
-	"./percent"
+	"yodao/bean/randomSequenceBean/sequence/percent"
 	// "fmt"
 	"math/rand"
 	"strings"
