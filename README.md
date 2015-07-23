@@ -10,11 +10,11 @@ Docker Container连接
 
 2.	启动服务spring:server，服务名：spring_server
 
-		docker run -d **--name spring_server** spring:server
+		docker run -d **	--name spring_server 	** spring:server
 
 3.	启动新容器ubuntu:12.04，连接服务，（映射别名：server）
 
-		docker run -i -t **--link spring_server:server** ubuntu:12.04 /bin/bash
+		docker run -i -t **		--link spring_server:server 	** ubuntu:12.04 /bin/bash
 
 4.	查看环境变量
 
