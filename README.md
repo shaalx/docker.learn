@@ -1,6 +1,6 @@
 #	DOCKER
 
-link
+##	link
 
 Docker Container连接
 
@@ -22,3 +22,10 @@ Docker Container连接
 
 服务spring:server的环境变量以（别名server）SERVER开始。
 
+##	net
+
+Docker 网络
+
+1.	host
+
+		docker run --net:host --name spring_s1 -i -t spring:v1
