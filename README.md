@@ -1,5 +1,16 @@
 #	DOCKER
 
+##	install
+
+###		install from DaoCloud
+
+	curl -sSL https://get.daocloud.io/docker | sh
+
+###		run deamon
+
+	sudo docker -d &
+
+
 ##	link
 
 Docker Container连接
