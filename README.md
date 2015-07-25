@@ -4,12 +4,17 @@
 
 ###		install from DaoCloud
 
-	curl -sSL https://get.daocloud.io/docker | sh
+		curl -sSL https://get.daocloud.io/docker | sh
 
 ###		run deamon
 
-	sudo docker -d &
+		sudo docker -d &
 
+###		配置Docker加速器
+
+		echo "DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=http://60026668.m.daocloud.io\"" | sudo tee -a /etc/default/docker
+		
+		sudo service docker restart
 
 ##	link
 
@@ -39,4 +44,4 @@ Docker 网络
 
 1.	host
 
-		docker run --net:host --name spring_s1 -i -t spring:v1
+		docker run --net host --name spring_s1 -i -t spring:v1
