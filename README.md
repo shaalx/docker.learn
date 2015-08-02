@@ -45,3 +45,15 @@ Docker 网络
 1.	host
 
 		docker run --net host --name spring_s1 -i -t spring:v1
+
+##	run
+
+1.	EXPOSE
+
+Dockerifle:
+
+		EXPOSE 9000:9000 80:80
+
+配合命令
+
+		docker run -p 9000:9000 -p 80:80 C:latest
