@@ -3,5 +3,5 @@ echo commit:
 read commit
 git add -A
 git commit -m $commit
-git push origin master:dev
+git push hub master:dev
 
