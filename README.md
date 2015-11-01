@@ -57,3 +57,13 @@ Dockerifle:
 配合命令
 
 		docker run -p 9000:9000 -p 80:80 C:latest
+
+## stop
+
+ctrl+p+q : quietly quit
+
+ctrl+c : exit, stop the container and exit
+
+## ID
+
+docker ps -a -q
